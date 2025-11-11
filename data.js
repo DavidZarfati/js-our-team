@@ -36,8 +36,3 @@ const teamMembers = [
         img: "img/female3.png"
     }
 ];
-
-const nameInput = document.querySelector("#name")
-const roleInput = document.querySelector("#role")
-const imgInput = document.querySelector("#img")
-const form = document.querySelector("form")
