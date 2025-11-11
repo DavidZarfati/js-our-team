@@ -39,7 +39,7 @@ const teamMembers = [
 function createSingleCard(member) {
   const { name, role, img } = member;
   const card = `
-  <div class="team-card">
+  <div class="team-card col-12 col-sm-6 col-md-4 col-lg-3 ">
     <div class="card-img">
       <img
         src="${img}"
