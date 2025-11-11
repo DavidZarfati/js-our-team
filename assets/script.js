@@ -37,26 +37,21 @@ const teamMembers = [
   }
 ];
 function createSingleCard(member) {
-  const { name, role, img, manager } = member; // 3 variabili
-  let className = "";
-  if (manager === true) {
-    className = "manager";
-  }
-
+  const { name, role, img } = member;
   const card = `
-    <div class="team-card ${className}">
-        <div class="card-img">
-            <img
-                src="img/${img}"
-                alt="${name}"
-            />
-        </div>
-        <div class="card-text">
-            <h3>${name}</h3>
-            <p>${role}</p>
-        </div>
+  <div class="team-card">
+    <div class="card-img">
+      <img
+        src="${img}"
+        alt="${name}"
+      />
     </div>
-    `;
+    <div class="card-text">
+      <h3>${name}</h3>
+      <p>${role}</p>
+    </div>
+  </div>
+  `;
   return card;
 }
 function printCardsGrid() {
