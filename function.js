@@ -1,3 +1,4 @@
+
 function createSingleCard(member) {
     const { name, role, img } = member;
     const card = `
@@ -43,5 +44,10 @@ form.addEventListener("submit", function (event) {
     nameInput.value = '';
     roleInput.value = '';
     imgInput.value = '';
+
+
+    // Codice che fa chiudere il Modal dopo che clicco invio
+    const modal = bootstrap.Modal.getInstance(document.getElementById('exampleModal'));
+    modal.hide();
 })
 
