@@ -35,6 +35,13 @@ const teamMembers = [
     email: "danielaamet@team.com",
     img: "img/female3.png"
   }
+  // ,
+  // {
+  //   name: "David Zarfati",
+  //   role: "Web Developer",
+  //   email: "davidzarfati@team.com",
+  //   img: "img/david.jpg"
+  // }
 ];
 function createSingleCard(member) {
   const { name, role, img } = member;
@@ -44,6 +51,7 @@ function createSingleCard(member) {
       <img
         src="${img}"
         alt="${name}"
+        style="width:200px; height:200px; object-fit:cover;"
       />
     </div>
     <div class="card-text">
@@ -66,3 +74,24 @@ function printCardsGrid() {
   teamContainer.innerHTML += cardString
 }
 printCardsGrid()
+
+const nameInput = document.querySelector("#name")
+const roleInput = document.querySelector("#role")
+const imgInput = document.querySelector("#img")
+const form = document.querySelector("form")
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const newMember = {
+    name: nameInput.value,
+    role: roleInput.value,
+    img: imgInput.value,
+  }
+  teamMembers.push(newMember);
+  const teamContainer = document.querySelector(".team-container");
+  const newCard = createSingleCard(newMember);
+  teamContainer.innerHTML += newCard;
+  nameInput.value = '';
+  roleInput.value = '';
+  imgInput.value = '';
+})
